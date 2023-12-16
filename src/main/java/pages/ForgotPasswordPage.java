@@ -23,7 +23,7 @@ public class ForgotPasswordPage {
     }
 
     @Step("Нажатие на кнопку входа на странице формы восстановления пароля")
-    public LoginPage clickEntryForgotPasswordButton(){
+    public LoginPage clickEntryForgotPasswordButton() {
         wait.until(ExpectedConditions.visibilityOf(entryForgotPasswordButton));
         entryForgotPasswordButton.click();
         return new LoginPage(driver);

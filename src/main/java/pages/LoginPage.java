@@ -40,40 +40,40 @@ public class LoginPage {
     }
 
     @Step("Нажатие на кнопку Зарегистрироваться на странице авторизации")
-    public RegisterPage clickRegisterButton(){
+    public RegisterPage clickRegisterButton() {
         wait.until(ExpectedConditions.visibilityOf(registerButton));
         registerButton.click();
         return new RegisterPage(driver);
     }
 
     @Step("Проверка отображения заголовка Вход на странице авторизации")
-    public LoginPage entryTitlePresent(){
+    public LoginPage entryTitlePresent() {
         wait.until(ExpectedConditions.visibilityOf(entryTitle));
         assertTrue(entryTitle.isDisplayed());
         return this;
     }
 
     @Step("Ввод значения в поле Email")
-    public LoginPage setEmailLoginInput(String email){
+    public LoginPage setEmailLoginInput(String email) {
         emailLoginInput.sendKeys(email);
         return this;
     }
 
     @Step("Ввод значения в поле Пароль")
-    public LoginPage setPasswordLoginInput(String password){
+    public LoginPage setPasswordLoginInput(String password) {
         passwordLoginInput.sendKeys(password);
         return this;
     }
 
     @Step("Нажатие на кнопку Войти на странице авторизации")
-    public MainPage clickEntryLoginButton(){
+    public MainPage clickEntryLoginButton() {
         wait.until(ExpectedConditions.visibilityOf(entryLoginButton));
         entryLoginButton.click();
         return new MainPage(driver);
     }
 
     @Step("Нажатие на кнопку Восстановить пароль на странице авторизации")
-    public ForgotPasswordPage clickResetPasswordButton(){
+    public ForgotPasswordPage clickResetPasswordButton() {
         resetPasswordButton.click();
         return new ForgotPasswordPage(driver);
     }

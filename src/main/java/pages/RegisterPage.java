@@ -30,50 +30,49 @@ public class RegisterPage {
     private WebElement errorPassword;
 
 
-
     public RegisterPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
     @Step("Ввод значения в поле Имя на странице регистрации")
-    public RegisterPage setInputName(String name){
+    public RegisterPage setInputName(String name) {
         nameInput.sendKeys(name);
         return this;
     }
 
     @Step("Ввод значения в поле Email на странице регистрации")
-    public RegisterPage setInputEmail(String email){
+    public RegisterPage setInputEmail(String email) {
         emailInput.sendKeys(email);
         return this;
     }
 
     @Step("Ввод значения в поле Пароль на станице регистрации")
-    public RegisterPage setInputPassword(String password){
+    public RegisterPage setInputPassword(String password) {
         passwordInput.sendKeys(password);
         return this;
     }
 
     @Step("Нажатие на кнопку Зарегистрироваться")
-    public LoginPage clickRegisterButton(){
+    public LoginPage clickRegisterButton() {
         registerButton.click();
         return new LoginPage(driver);
     }
 
     @Step("Ввод невалидного значения в поле Пароль на станице регистрации")
-    public RegisterPage setInvalidPassword(){
+    public RegisterPage setInvalidPassword() {
         passwordInput.sendKeys("12345");
         return this;
     }
 
     @Step("Нажатие на кнопку Войти на странице регистрации")
-    public LoginPage clickEntryButton(){
+    public LoginPage clickEntryButton() {
         entryButton.click();
         return new LoginPage(driver);
     }
 
     @Step("Проверка отображения ошибки при вводе некорректного пароля")
-    public RegisterPage errorPasswordPresent(){
+    public RegisterPage errorPasswordPresent() {
         assertTrue(errorPassword.isDisplayed());
         return this;
     }

@@ -29,25 +29,25 @@ public class ProfilePage {
     }
 
     @Step("Проверка отображения кнопки Профиль")
-    public ProfilePage accountButtonsPresent(){
+    public ProfilePage accountButtonsPresent() {
         assertTrue(accountButtons.isDisplayed());
         return this;
     }
 
     @Step("Нажатие на кнопку Конструктор на странице профиля")
-    public MainPage clickConstructorButton(){
+    public MainPage clickConstructorButton() {
         constructorButton.click();
         return new MainPage(driver);
     }
 
     @Step("Нажатие на кнопку логотип Stellar Burgers на странице Профиля")
-    public MainPage clickLogoHeader(){
+    public MainPage clickLogoHeader() {
         logoHeader.click();
         return new MainPage(driver);
     }
 
     @Step("Нажатие на кнопку Выход на странице профиля")
-    public LoginPage clickExitProfile(){
+    public LoginPage clickExitProfile() {
         exitButton.click();
         return new LoginPage(driver);
     }

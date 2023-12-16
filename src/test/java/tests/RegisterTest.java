@@ -10,18 +10,19 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.html5.LocalStorage;
 import org.openqa.selenium.html5.WebStorage;
-import pages.MainPage;
 import pages.LoginPage;
+import pages.MainPage;
 import pages.RegisterPage;
 
 public class RegisterTest {
     @Rule
     public DriverRule driverRule = new DriverRule();
+
     private String accessToken;
 
     @Description("Тест проводит проверку успешной регистрации пользователя")
     @Test
-    public void testSuccessfullyRegister(){
+    public void testSuccessfullyRegister() {
         MainPage basePage = new MainPage(driverRule.getDriver());
         LoginPage loginPage = basePage.clickPersonalAccountButton();
         RegisterPage registerPage = loginPage.clickRegisterButton()
@@ -38,7 +39,7 @@ public class RegisterTest {
 
     @Description("Тест проводит проверку неуспешной регистрации пользователя при вводе некорректного пароля")
     @Test
-    public void testErrorRegistration(){
+    public void testErrorRegistration() {
         MainPage basePage = new MainPage(driverRule.getDriver());
         LoginPage loginPage = basePage.clickPersonalAccountButton();
         RegisterPage registerPage = loginPage.clickRegisterButton()
@@ -50,7 +51,7 @@ public class RegisterTest {
     }
 
     @After
-    public void deleteUser(){
+    public void deleteUser() {
         if (accessToken != null) {
             WebStorage webStorage = (WebStorage) driverRule.getDriver();
             LocalStorage localStorage = webStorage.getLocalStorage();

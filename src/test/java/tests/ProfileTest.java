@@ -11,14 +11,15 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.html5.LocalStorage;
 import org.openqa.selenium.html5.WebStorage;
-import pages.MainPage;
 import pages.LoginPage;
+import pages.MainPage;
 import pages.ProfilePage;
 import pages.RegisterPage;
 
 public class ProfileTest {
     @Rule
     public DriverRule driverRule = new DriverRule();
+
     private String accessToken;
     private MainPage basePage;
     private LoginPage loginPage;
@@ -26,7 +27,6 @@ public class ProfileTest {
     private MainPage mainPage;
     private ProfilePage profilePage;
     public static String generatedEmail;
-
 
     @Before
     public void setUp() throws Exception {
@@ -49,33 +49,33 @@ public class ProfileTest {
 
     @Description("Тест проводит проверку перехода по клику на «Личный кабинет»")
     @Test
-    public void testClickPersonalAccountButton(){
+    public void testClickPersonalAccountButton() {
         profilePage.accountButtonsPresent();
     }
 
     @Description("Тест проводит проверку перехода из личного кабинета в конструктор по клику на «Конструктор»")
     @Test
-    public void testConstructor(){
+    public void testConstructor() {
         mainPage = profilePage.clickConstructorButton()
                 .orderButtonPresent();
     }
 
     @Description("Тест проводит проверку перехода из личного кабинета в конструктор по клику на логотип Stellar Burgers")
     @Test
-    public void testLogoHeader(){
+    public void testLogoHeader() {
         mainPage = profilePage.clickLogoHeader()
                 .orderButtonPresent();
     }
 
     @Description("Тест проводит проверку выхода из профиля по кнопке «Выйти» в личном кабинете")
     @Test
-    public void testExitProfile(){
+    public void testExitProfile() {
         loginPage = profilePage.clickExitProfile()
                 .entryTitlePresent();
     }
 
     @After
-    public void deleteUser(){
+    public void deleteUser() {
         if (accessToken != null) {
             WebStorage webStorage = (WebStorage) driverRule.getDriver();
             LocalStorage localStorage = webStorage.getLocalStorage();

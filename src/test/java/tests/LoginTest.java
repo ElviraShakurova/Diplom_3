@@ -11,10 +11,12 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.html5.LocalStorage;
 import org.openqa.selenium.html5.WebStorage;
-import pages.*;
+import pages.ForgotPasswordPage;
+import pages.LoginPage;
+import pages.MainPage;
+import pages.RegisterPage;
 
 public class LoginTest {
-
     @Rule
     public DriverRule driverRule = new DriverRule();
 
@@ -36,7 +38,7 @@ public class LoginTest {
 
     @Description("Тест проводит проверку входа в аккаунт через кнопку «Личный кабинет»")
     @Test
-    public void testLoginByPersonalAccountButton(){
+    public void testLoginByPersonalAccountButton() {
         MainPage basePage = new MainPage(driverRule.getDriver());
         LoginPage loginPage = basePage.clickPersonalAccountButton()
                 .setEmailLoginInput(generatedEmail)
@@ -47,7 +49,7 @@ public class LoginTest {
 
     @Description("Тест проводит проверку входа в аккаунт по кнопке «Войти в аккаунт» на главной")
     @Test
-    public void testLoginByEntryAccountButton(){
+    public void testLoginByEntryAccountButton() {
         MainPage basePage = new MainPage(driverRule.getDriver());
         LoginPage loginPage = basePage.clickEntryButton()
                 .setEmailLoginInput(generatedEmail)
@@ -58,7 +60,7 @@ public class LoginTest {
 
     @Description("Тест проводит проверку входа в аккаунт кнопку Войти в форме восстановления пароля")
     @Test
-    public void testLoginResetPasswordForm(){
+    public void testLoginResetPasswordForm() {
         MainPage basePage = new MainPage(driverRule.getDriver());
         LoginPage loginPage = basePage.clickPersonalAccountButton();
         ForgotPasswordPage forgotPasswordPage = loginPage.clickResetPasswordButton();
@@ -71,7 +73,7 @@ public class LoginTest {
 
     @Description("Тест проводит проверку входа в аккаунт через кнопку Войти в форме регистрации")
     @Test
-    public void testLoginByRegisterForm(){
+    public void testLoginByRegisterForm() {
         MainPage basePage = new MainPage(driverRule.getDriver());
         LoginPage loginPage = basePage.clickPersonalAccountButton();
         RegisterPage registerPage = loginPage.clickRegisterButton();
@@ -83,7 +85,7 @@ public class LoginTest {
     }
 
     @After
-    public void deleteUser(){
+    public void deleteUser() {
         if (accessToken != null) {
             WebStorage webStorage = (WebStorage) driverRule.getDriver();
             LocalStorage localStorage = webStorage.getLocalStorage();

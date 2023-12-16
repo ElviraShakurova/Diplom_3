@@ -1,4 +1,5 @@
 package helpers;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
@@ -33,7 +34,7 @@ public class EnvHelper {
         return PROPERTIES.getProperty("chromeBrowser.path");
     }
 
-    public static String getBaseUrl(){
+    public static String getBaseUrl() {
         return PROPERTIES.getProperty("base.url");
     }
 
@@ -47,19 +48,19 @@ public class EnvHelper {
         return Duration.ofSeconds(seconds);
     }
 
-    public static String getName(){
+    public static String getName() {
         Random random = new Random();
         int randomNumber = random.nextInt(10000);
         return "Harry" + randomNumber;
     }
 
-    public static String getEmail(){
+    public static String getEmail() {
         Random random = new Random();
         int randomNumber = random.nextInt(10000);
         return "Harry" + randomNumber + "@mai.ru";
     }
 
-    public static String getPassword(){
+    public static String getPassword() {
         return PROPERTIES.getProperty("password");
     }
 }

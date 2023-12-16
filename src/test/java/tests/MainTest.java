@@ -11,7 +11,7 @@ public class MainTest {
 
     @Description("Тест проводит проверку перехода к разделам Булки, Соусы, Начинки")
     @Test
-    public void testIngredientTabs(){
+    public void testIngredientTabs() {
         MainPage basePage = new MainPage(driverRule.getDriver())
                 .clickSouses()
                 .assertSousesIngredient()

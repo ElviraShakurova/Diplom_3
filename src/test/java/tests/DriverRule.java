@@ -9,7 +9,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.io.File;
 
-
 public class DriverRule extends ExternalResource {
     private WebDriver driver;
 
