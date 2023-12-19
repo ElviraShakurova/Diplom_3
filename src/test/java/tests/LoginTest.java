@@ -1,5 +1,6 @@
 package tests;
 
+import helpers.DriverRule;
 import helpers.EnvHelper;
 import io.qameta.allure.Description;
 import io.restassured.RestAssured;

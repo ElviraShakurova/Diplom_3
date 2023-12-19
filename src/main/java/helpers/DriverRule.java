@@ -1,4 +1,4 @@
-package tests;
+package helpers;
 
 import helpers.EnvHelper;
 import org.junit.rules.ExternalResource;

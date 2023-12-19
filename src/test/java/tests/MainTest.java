@@ -1,5 +1,6 @@
 package tests;
 
+import helpers.DriverRule;
 import io.qameta.allure.Description;
 import org.junit.Rule;
 import org.junit.Test;
